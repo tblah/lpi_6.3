@@ -16,12 +16,12 @@ void printEnviron(void) {
 
 int main(int argc, char* argv[])
 {
-	printEnviron();
+	//printEnviron();
 
-	printf("\n\nUnsetting SHELL...\n\n");
+	//printf("\n\nUnsetting SHELL...\n\n");
 	unsetenv("SHELL");
 
-	printEnviron();
+	//printEnviron();
 
 
 

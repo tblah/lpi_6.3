@@ -15,6 +15,9 @@ tester: $(TESTER_DEPS)
 test: tester
 	./$(OUTPUT_NAME)
 
+memtest: tester
+	valgrind --tool=memcheck --leak-check=yes --track-origins=yes ./$(OUTPUT_NAME)
+
 setenv.o: $(SETENV_DEPS)
 	cc $(COMPILE_OPTS) -c -o setenv.o setenv.c
 

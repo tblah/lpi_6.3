@@ -19,13 +19,13 @@ char *getKey(char* pair) { // gets the key out of a "KEY=VALUE" pair
 	}
 
 
-	newString[numCharichters] = '\0';
+	newString[numCharichters - 1] = '\0';
 
 	return newString;
 }
 
 int unsetenv(const char *name) {
-	printf("Using my unsetenv...\n");
+	//printf("Using my unsetenv...\n");
 	// walk through environ looking for the name we are deleting
 	for (char **ep = environ; *ep != NULL; ep++) {	// environ is a null terminated set of adjacent pointers to "KEY=VALUE" strings
 		char* key = getKey(*ep);
@@ -36,6 +36,7 @@ int unsetenv(const char *name) {
 				*ep = *(ep + 1);
 			}
 			*ep = NULL;
+			free(key);
 			break;
 		}
 		
