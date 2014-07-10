@@ -1,4 +1,4 @@
-COMPILE_OPTS = -g -Wall
+COMPILE_OPTS = -g -Wall -std=c99
 OUTPUT_NAME = tester
 
 TESTER_DEPS = setenv.o setenv.h unsetenv.o unsetenv.h bool.h errExit.o errExit.h test.c
@@ -9,7 +9,7 @@ all: tester
 	
 
 tester: $(TESTER_DEPS)
-	cc $(COMPILE_OPTS) -o $(OUTPUT_NAME) setenv.o unsetenv.o test.c
+	cc $(COMPILE_OPTS) -o $(OUTPUT_NAME) setenv.o unsetenv.o unsetenv.h setenv.h test.c 
 
 
 test: tester
@@ -18,7 +18,7 @@ test: tester
 setenv.o: $(SETENV_DEPS)
 	cc $(COMPILE_OPTS) -c -o setenv.o setenv.c
 
-unsetenv.o: $(SETENV_DEPS)
+unsetenv.o: $(UNSETENV_DEPS)
 	cc $(COMPILE_OPTS) -c -o unsetenv.o unsetenv.c
 
 # an alias to make me happy (keep the line below with the tab intact)
