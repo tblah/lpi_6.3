@@ -29,7 +29,7 @@ int setenv(const char *name, const char *value, int overwrite){
 	}
 
 		// add the new env to environ
-	char newString[STRING_MAX + STRING_MAX + 2] = ""; // STRING_MAX for each string plus '=' and '\0'
+	static char newString[STRING_MAX + STRING_MAX + 2] = ""; // STRING_MAX for each string plus '=' and '\0'
 
 	strncat(newString, name, STRING_MAX); // copy everything so bad things don't happen if the caller changes the variables
 	strncat(newString, "=", 1);

@@ -3,8 +3,10 @@
 
 char *getKey(char* pair) { // gets the key out of a "KEY=VALUE" pair
 	char* equalsAddress = strchr(pair, '=');
-	if (equalsAddress == NULL)					// make sure that an equals was found
+	if (equalsAddress == NULL) {				// make sure that an equals was found
+		printf("No equals found. Input was %s\n", pair);
 		return NULL;
+	}
 
 	unsigned int numCharichters = (equalsAddress - pair) + 1; // this should be the number of characters (inc NULL) that are needed
 

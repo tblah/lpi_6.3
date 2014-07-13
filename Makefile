@@ -10,7 +10,7 @@ all: tester
 	
 
 tester: $(TESTER_DEPS)
-	cc $(COMPILE_OPTS) -o $(OUTPUT_NAME) setenv.o getKey.o unsetenv.o unsetenv.h setenv.h test.c 
+	cc $(COMPILE_OPTS) -o $(OUTPUT_NAME) setenv.o errExit.o getKey.o unsetenv.o unsetenv.h setenv.h test.c 
 
 
 test: tester

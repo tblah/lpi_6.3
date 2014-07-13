@@ -1,6 +1,7 @@
 #include <string.h> // for strcmp
 #include <stdlib.h> // free
 #include "getKey.h" // getKey
+#include <stdio.h> 	// printf
 
 extern char **environ;	// defined in the C bootstrap code
 
