@@ -1,4 +1,4 @@
-COMPILE_OPTS = -g -Wall -std=c99
+COMPILE_OPTS = -g -Wall -std=c99 -Wno-implicit-function-declaration
 OUTPUT_NAME = tester
 
 TESTER_DEPS = setenv.o getKey.o setenv.h unsetenv.o unsetenv.h bool.h errExit.o errExit.h test.c
